@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Statistics - Hope Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="kevin.png" alt="Logo" class="logo">
+                <h1>HOPE HEALTH CENTER</h1>
+            </div>
+        </header>
+
+
+        <div class="main-layout">
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="registration.html">Patient</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+                <div class="filter-row">
+                    <div class="date-input">
+                        <label>From Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="date-input">
+                        <label>To Date</label>
+                        <input type="date">
+                    </div>
+                    <button class="generate-btn">Generate</button>
+                </div>
+
+                <div class="report-stats">
+                    <div class="stat-box green-box">
+                        <p>Total Patients</p>
+                        <h2>103</h2>
+                    </div>
+                    <div class="stat-box blue-box">
+                        <p>Appointments</p>
+                        <h2>58</h2>
+                    </div>
+                    <div class="stat-box brown-box">
+                        <p>Pending</p>
+                        <h2>12</h2>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Monthly Activity Chart</h3>
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 30%;"></div>
+                        <div class="bar" style="height: 50%;"></div>
+                        <div class="bar" style="height: 80%;"></div>
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 90%;"></div>
+                        <div class="bar" style="height: 60%;"></div>
+                    </div>
+                </div>
+
+                <div class="report-footer">
+                    Reports Ready for print/Export
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
