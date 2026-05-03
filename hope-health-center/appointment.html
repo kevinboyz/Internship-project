@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments Management - Hope Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+       
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="kevin.png" alt="Logo" class="logo">
+                <h1>HOPE HEALTH CENTER</h1>
+            </div>
+        </header>
+
+ <div class="main-layout">
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="registration.html">Patient</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+                <div class="appointment-header">
+                    <div class="date-selector">Select Date: 27/04/2026</div>
+                    <button class="new-appointment-btn">New Appointment</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>08:00</td>
+                                <td>Kevin</td>
+                                <td>Dr.mac</td>
+                                <td>Pending</td>
+                                <td><button class="action-link">Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>09:30</td>
+                                <td>Marie</td>
+                                <td>Dr. Alice</td>
+                                <td>Done</td>
+                                <td><button class="action-link">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>11:00</td>
+                                <td>Eric</td>
+                                <td>Dr.alice</td>
+                                <td>Pending</td>
+                                <td><button class="action-link">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="summary-box">
+                    <h3>Today's Summary</h3>
+                    <p>Total: 12</p>
+                    <p>Pending: 5</p>
+                    <p>Done: 7</p>
+                </div>
+
+                <div class="offline-status">
+                    Offline Mode ACTIVE
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

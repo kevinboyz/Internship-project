@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - Hope Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="kevin.png" alt="Logo" class="logo">
+                <h1>HOPE HEALTH CENTER</h1>
+            </div>
+        </header>
+        <div class="main-layout">
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="registration.html">Patient</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+        <div class="form-card">
+            <h2>New Patient Form</h2>
+        
+                    
+                    <form class="patient-form">
+                        <div class="form-grid">
+                            <div class="col">
+                                <label>Full Name:</label>
+                                <input type="text">
+
+                                <label>Age:</label>
+                                <input type="number">
+
+                                <label>Gender:</label>
+                                <input type="text">
+                            </div>
+
+                            <div class="col">
+                                <label>Phone Number:</label>
+                                <input type="text">
+
+                                <label>National ID:</label>
+                                <input type="text">
+                            </div>
+                        </div>
+
+                        <div class="full-width">
+                            <label>Address:</label>
+                            <textarea rows="3"></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                           <button type="button" id="saveButton" class="btn-save">Save</button>
+                            <button type="reset" class="btn-clear">Clear</button>
+                          <button type="button" class="btn-print" onclick="window.print()">Print Card</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="status-footer">
+                    Ready to Register Patient
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
