@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversion History</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Ibi bituma imiterere yawe iguma uko wayishatse */
+        nav {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+        }
+        nav button {
+            background: none;
+            border: none;
+            padding: 5px 10px;
+        }
+        nav a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .history-card {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #444;
+            color: white;
+            border-radius: 15px;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .history-table th, .history-table td {
+            padding: 12px;
+            border-bottom: 1px solid #666;
+            text-align: left;
+        }
+        .btn-clear {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <button><a href="index.html">HOME</a></button> &nbsp;
+        <button><a href="converter.html">CONVERTER</a></button> &nbsp;
+        <button><a href="details.html">DETAILS</a></button> &nbsp;
+        <button><a href="history.html">HISTORY</a></button> &nbsp;
+        <button><a href="settings.html">SETTINGS</a></button> 
+    </nav>
+
+    <main class="container">
+        <div class="history-card">
+            <h2>Conversion History</h2>
+            
+            <div class="history-actions">
+                <button id="clear-history" class="btn-clear" onclick="clearHistory()">
+                    <i class="fas fa-trash"></i> Clear History
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Entry Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-list">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>BG-TECH Currency</h4>
+                <p>Providing reliable exchange rates and financial tools for L3 SOD students.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="settings.html">Theme Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                   <a href="https://www.instagram.com/accounts/login/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                      </a>
+                     <a href="https://www.facebook.com/kevin abayisenga" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    </a>
+                     <a href="https://www.figma.com/visionboyz" target="_blank">
+                    <i class="fab fa-figma"></i>
+                    </a>
+                     </a>
+                     <a href="https://www.github.com/visionboyz" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 CURRENCY APP Designed for Integrated Task L3 SOD
+        </div>
+    </footer>
+
+    <script>
+        /* =============================
+           LOAD HISTORY FUNCTION
+        ============================= */
+        function loadHistory() {
+            const historyList = document.getElementById("history-list");
+            // Fata amakuru muri localStorage
+            let history = JSON.parse(localStorage.getItem("history")) || [];
+
+            if (history.length === 0) {
+                historyList.innerHTML = "<tr><td colspan='2' style='text-align:center;'>No history found.</td></tr>";
+                return;
+            }
+
+            // Kwerekana buri kintu cyabitswe (Date na Details)
+            historyList.innerHTML = history.reverse().map(item => `
+                <tr>
+                    <td>${item.date || "N/A"}</td>
+                    <td>${item.details || item}</td>
+                </tr>
+            `).join("");
+        }
+
+        /* =============================
+           CLEAR HISTORY FUNCTION
+        ============================= */
+        function clearHistory() {
+            if (confirm("Are you sure you want to delete all history?")) {
+                localStorage.removeItem("history");
+                loadHistory(); // Refresh table
+            }
+        }
+
+        // Hamagara iyi function paji ikimara gufunguka
+        window.onload = loadHistory;
+    </script>
+</body>
+</html>

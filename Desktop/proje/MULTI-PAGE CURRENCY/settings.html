@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings - BG-TECH Currency</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Ibi bituma paji isa neza na converter-box yawe */
+    body {
+      transition: background 0.3s, color 0.3s;
+      background-color: #8e8e8e;
+      font-family: sans-serif;
+    }
+
+    /* Dark Mode Styles */
+    body.dark {
+      background-color: #1a1a1a;
+      color: white;
+    }
+
+    .settings-box {
+      max-width: 450px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #444;
+      color: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .setting-item {
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .setting-item label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #add8e6; /* Light blue nka footer */
+    }
+
+    select, .toggle-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #666;
+      background: #555;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .save-btn {
+      background-color: #0000ff;
+      color: lawngreen;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background-color: black;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: yellow;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">HOME</a> 
+  <a href="converter.html">CONVERTER</a> 
+  <a href="details.html">DETAILS</a>
+  <a href="history.html">HISTORY</a>
+  <a href="settings.html" style="text-decoration: underline;">SETTINGS</a>
+</nav>
+
+<div class="settings-box">
+  <h2><i class="fas fa-cog"></i> App Settings</h2>
+
+  <div class="setting-item">
+    <label>Appearance (Theme)</label>
+    <button class="toggle-btn" id="theme-toggle" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i> Switch to Dark Mode
+    </button>
+  </div>
+
+  <div class="setting-item">
+    <label>Default Currency</label>
+    <select id="default-currency">
+      <option value="RWF">🇷🇼 RWF - Rwanda Franc</option>
+      <option value="USD">🇺🇸 USD - US Dollar</option>
+      <option value="EUR">🇪🇺 EUR - Euro</option>
+    </select>
+  </div>
+
+  <div class="setting-item">
+    <label>Language</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="rw">Ikinyarwanda</option>
+    </select>
+  </div>
+
+  <button class="save-btn" onclick="saveSettings()">Save Settings</button>
+</div>
+
+
+<script>
+  // 1. Toggle Theme (Dark/Light)
+  function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('theme-toggle');
+    
+    body.classList.toggle('dark');
+    
+    if (body.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+      btn.innerHTML = '<i class="fas fa-sun"></i> Switch to Light Mode';
+    } else {
+      localStorage.setItem('theme', 'light');
+      btn.innerHTML = '<i class="fas fa-moon"></i> Switch to Dark Mode';
+    }
+  }
+
+  // 2. Save All Settings
+  function saveSettings() {
+    const defCurr = document.getElementById('default-currency').value;
+    const lang = document.getElementById('language').value;
+
+    localStorage.setItem('defaultCurrency', defCurr);
+    localStorage.setItem('language', lang);
+
+    alert("Settings saved successfully!");
+  }
+
+  // 3. Load Settings on Startup
+  window.onload = function() {
+    // Load Theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i> Switch to Light Mode';
+    }
+
+    // Load Default Currency
+    const savedCurr = localStorage.getItem('defaultCurrency');
+    if (savedCurr) document.getElementById('default-currency').value = savedCurr;
+
+    // Load Language
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) document.getElementById('language').value = savedLang;
+  };
+</script>
+
+</body>
+</html>

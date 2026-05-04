@@ -1,0 +1,215 @@
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: gray;
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: black;
+    color: yellow;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+    align-items: center;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.btn-main {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+/* Details Page Styling */
+.details-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.mock-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 200px;
+    border-bottom: 2px solid var(--primary-color);
+    margin: 20px 0;
+    padding-bottom: 5px;
+}
+
+.bar {
+    flex: 1;
+    background-color: var(--accent-color);
+    border-radius: 3px 3px 0 0;
+    transition: height 0.3s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.text-green { color: green; font-weight: bold; }
+.text-red { color: red; font-weight: bold; }
+/* Layout General */
+.container {
+    padding: 40px 5%;
+    min-height: 80vh;
+}
+
+/* Details Card */
+.details-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rate-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: black;
+    color: yellow;
+    padding: 10px 2% 5px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: gray;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.social-links a {
+   color: whitesmoke;             /* Ibara rya icon */
+  font-size: 30px;          /* Ingano ya icon */
+  margin: 0 15px;           /* Intera hagati yazo */
+  text-decoration: none;    /* Gukuraho umurongo munsi ya link */
+  transition: 0.3s;         /* Guhinduka buhoro */
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+.history-card {
+    background-color: #444; /* Ibara rimeze nk'irya converter */
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.history-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.btn-clear {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    border-bottom: 1px solid #666;
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #333;
+}
