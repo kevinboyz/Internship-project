@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Management - Hope Health</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="kevin.png" alt="Logo" class="logo">
+                <h1>PATIENT MANAGEMENT</h1>
+            </div>
+        </header>
+
+               <div class="main-layout">
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="registration.html">Patient</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+            <li><a href="report.html">Reports</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="content-area">
+                <div class="management-header">
+                    <input type="text" placeholder="search patient...." class="search-input">
+                    <a href="registration.html" class="add-patient-btn">Add patient</a>
+                </div>
+
+                <div class="table-container">
+                    <table class="patients-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>GENDER</th>
+                                <th>PHONE</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Kevin</td>
+                                <td>Male</td>
+                                <td>0792885133</td>
+                                <td><button class="view-link">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Marie</td>
+                                <td>Female</td>
+                                <td>0792885211</td>
+                                <td><button class="view-link">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Eric</td>
+                                <td>Male</td>
+                                <td>0786111217</td>
+                                <td><button class="view-link">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="total-status">
+                    Total Patients: 100
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
