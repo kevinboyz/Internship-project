@@ -10,3 +10,6 @@ also can help the tourism when rich in the country to exchange to frw of each cp
 
  * The prototype of my project hope-health-center :
 [MY PROTOTYPE.docx](https://github.com/user-attachments/files/27338279/MY.PROTOTYPE.docx)
+
+   * Also I add my vue project in clinic ( hope-health-center )
+   * thank you.
